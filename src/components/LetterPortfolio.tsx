@@ -11,8 +11,9 @@ type FadeSectionProps = {
   className?: string;
 };
 
-const IMAGE_BASE_PATH =
-  process.env.NODE_ENV === "production" ? "/pakkiana" : "";
+// Use NEXT_PUBLIC_BASE_PATH (set in next.config) so the client sees the correct
+// base path when the site is hosted under a repo subpath (GitHub Pages).
+const IMAGE_BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const works = [
   "Remix d’Emigrazione",

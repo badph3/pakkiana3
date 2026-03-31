@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
   },
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
+  // expose the basePath to the client so components can build correct asset URLs
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath || "",
+  },
   reactCompiler: true,
   turbopack: {
     root: __dirname,
