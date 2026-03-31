@@ -1,0 +1,118 @@
+.page {
+  min-height: 100svh;
+  width: min(760px, calc(100vw - 3rem));
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 8rem) 0 clamp(4rem, 14vh, 9rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3rem, 10vh, 6rem);
+  color: var(--text);
+  font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+}
+
+.fadeSection {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 2.6s ease,
+    transform 2.6s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.heading p {
+  font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+  line-height: 1.8;
+}
+
+.heading span {
+  display: block;
+  font-size: clamp(1.3rem, 3.8vw, 2rem);
+}
+
+.heading em {
+  font-style: italic;
+  color: color-mix(in srgb, var(--text) 75%, white 25%);
+}
+
+.core {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: clamp(1.6rem, 5vh, 2.8rem);
+}
+
+.flowerFrame {
+  width: clamp(128px, 28vw, 220px);
+  opacity: 0.94;
+}
+
+.flowerFrame img {
+  width: 100%;
+  height: auto;
+}
+
+.workList {
+  list-style: none;
+  display: grid;
+  gap: clamp(0.8rem, 2.2vh, 1.3rem);
+  text-align: center;
+}
+
+.workList li {
+  font-size: clamp(1.15rem, 3.5vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+.closing {
+  text-align: center;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.closing p,
+.closing a {
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.closing em {
+  font-style: italic;
+}
+
+.closing a {
+  font-style: italic;
+}
+
+@media (min-width: 760px) {
+  .core {
+    grid-template-columns: auto auto;
+    column-gap: clamp(2.5rem, 8vw, 5rem);
+    align-items: center;
+  }
+
+  .workList {
+    text-align: left;
+    transform: translateY(10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeSection {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
